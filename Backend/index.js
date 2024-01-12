@@ -20,13 +20,12 @@ mongoose.connect(dburl).then(()=>{
     console.log("Error Coonection DB",error);
 });
 
-const Task = mongoose.model('Task', {
-    content: String,
-  });
 
-app.use('/api',loginroutes);
 
-const PORT=process.env.PORT||5055;
+app.use('/api',loginroutes)
+
+
+  const PORT=process.env.PORT||5055;
 app.listen(PORT,()=>{
     console.log("Server is Running on port "+ PORT )
 })
